@@ -1,0 +1,39 @@
+<div class="container ">
+    <div class="row">
+        <div class="col-md-3 py-5">
+            You can Upload you Cv now To be Reviewed  
+            <hr>
+            After Uploading your Cv 
+            <br>
+            hr will approve your Request Soon 
+            <br>
+            and once your cv is accepted you will be able to start the Exams 
+            <br><hr>
+            <form [formGroup]="cv" class="d-flex justify-content-between">
+                <input
+                 type="file"
+                 class="btn btn-warning w-75"
+                 formControlName="myCv"
+                 >
+                 <button class="btn btn-outline-dark" (click)="onViewCv()">View</button>
+            </form>
+  
+        </div>
+        <div class="col-md-9">
+            <div class="row">
+                <div class="col-md-12">
+                    <button class="btn btn-warning my-3" *ngIf="imgSrc" (click)="pushRequest()" [routerLink]="['../messege']" [queryParams]="{'Uploaded':'true'}">Confirm Upload</button>
+
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <img *ngIf="imgSrc" src="../../../assets/imgs/cv/{{imgSrc}}" class="img-fluid" alt="">
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>

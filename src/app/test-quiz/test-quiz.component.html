@@ -1,0 +1,40 @@
+<h1 class="text-center">The Quiz name is[ {{quiz.name}} ]</h1>
+<div class="container-fluid bg-info">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+<div class="each-quiz">
+
+
+    <div class="modal-header">
+
+        <h3><span class="label label-warning pl-5" id="qid"></span> {{questions[0].question_body}}</h3>
+    </div>
+    <div class="modal-body">
+        <div class="col-xs-3 col-xs-offset-5">
+           <div id="loadbar" style="display: none;">
+              <div class="blockG" id="rotateG_01"></div>
+              
+          </div>
+      </div>
+
+      <div class="quiz" id="quiz" data-toggle="buttons">
+        <label class="element-animation1 btn btn-lg btn-primary btn-block" *ngFor="let answer of answers"><span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span> <input type="radio" name="q_answer" value="1">{{answer.answer_body}}</label>
+     </div>
+            </div>
+            <div class="modal-footer text-muted">
+                <span id="answer"></span>
+        </div>
+
+
+
+</div>
+
+
+     
+
+
+
+</div>
+</div>
+</div>

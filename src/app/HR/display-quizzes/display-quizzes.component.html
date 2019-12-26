@@ -1,0 +1,45 @@
+<div *ngFor="let quiz of allQuizzes ">
+    <ul class="list-group">
+        <li class="list-group-item" >{{quiz.quiz_name}}
+
+            <button class="btn btn-outline-danger mr-auto fa-pull-right"
+                id="{{'collapseExample'+quiz.quiz_id}}"         
+                (click)="collap(quiz.quiz_id)">
+                View Questions
+            </button>
+
+            <button class="btn btn-outline-danger fa-pull-right " (click)="onQuizRemove(quiz.quiz_id,quiz.quiz_name)" >Delete Quiz</button>
+           <hr>
+            <div class="collapse" id="collapseExample">
+                <div class="card card-body">
+
+                   
+
+                </div>
+              </div>
+        </li>
+    </ul>
+
+
+    <div class="collap" style="display: none" id="{{'collap'+quiz.quiz_id}}">
+        <ul class="list-group" *ngFor="let question of questions">
+            <li class="list-group-item bg-warning">{{question.question_body}} ?</li>
+          </ul>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+</div>
+

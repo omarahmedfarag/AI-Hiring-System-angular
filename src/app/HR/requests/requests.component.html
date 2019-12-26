@@ -1,0 +1,25 @@
+<ul class="list-group" *ngFor="let req of requests;let i=index">
+    <div class="d-flex">
+        <li class="list-group-item w-100">{{req.name | lowercase}}</li>
+        <button class="btn btn-warning ml-2" (click)="approve(req.name)" [disabled]="req.status">Approve</button>
+
+        <a class="btn btn-primary ml-2" 
+        data-toggle="collapse"
+         href="{{'#collapseExample'+ i}}"
+          role="button" 
+          aria-expanded="false"
+           aria-controls="collapseExample"
+           (click)="view(req.name)">
+           View
+        </a>
+
+        <button class="btn btn-primary ml-2" (click)="  disapprove(name)"[disabled]="req.status" >Reject</button>
+       
+    </div>
+    <div class="collapse" id="{{'collapseExample'+ i}}">
+        <div class="card card-body">
+            <img src="../../../assets/imgs/cv/{{imgSrc}}">
+        </div>
+    </div>
+
+</ul>

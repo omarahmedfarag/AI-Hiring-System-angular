@@ -1,0 +1,20 @@
+<div id="login-box">
+    <form [formGroup]="userInfo" class="left">
+      <div class="alert alert-danger" role="alert" *ngIf="errmessege">{{errmessege}}</div>
+      <input type="text" name="username" placeholder="Username" formControlName="name" />
+      <input type="text" name="email" placeholder="E-mail" formControlName="email" />
+      <input type="password" name="password" placeholder="Password" formControlName="password"/>
+      <input type="password" name="password2" placeholder="Retype password"  formControlName="password_confirmation"/>
+      
+      <input  type="submit" name="signup_submit" value="Sign me up" (click)="onSubmit()"/>
+    </form>
+    
+    <div class="right">
+      <span class="loginwith">Sign in with<br />social network</span>
+      
+      <button class="social-signin facebook" disabled>Log in with facebook</button>
+      <button class="social-signin twitter" disabled>Log in with Twitter</button>
+      <button class="social-signin google" disabled>Log in with Google+</button>
+    </div>
+    <div class="or">OR</div>
+  </div>

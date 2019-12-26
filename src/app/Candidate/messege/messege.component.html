@@ -1,0 +1,13 @@
+<div class="w-75 m-auto pl-5">
+
+<h2 class="mt-3 " *ngIf="done"> Wait For Approval  ! your Request unwatched yet</h2>
+<small class="m-auto">Once the hr Approve your request with agreament you will be apple to start the <span class="badge badge-info">Quizes</span></small>
+<hr>
+<button class="btn btn-danger" [disabled]="!approved" (click)="obser()">Start</button>
+</div>
+
+<div class="w-50 m-auto d-flex justify-content-center align-items-center mt-5" *ngIf="clicked">
+<button class="btn btn-info" (click)=startQuiz();>Quiz number 1</button>
+<button class="btn btn-info">Quiz number 2</button>
+<button class="btn btn-info">Quiz number 3</button>
+</div>

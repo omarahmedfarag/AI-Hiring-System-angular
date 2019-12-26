@@ -1,0 +1,35 @@
+
+<div class="container   quiz-section">
+    
+    
+    
+    <div class="m-auto  w-50" >
+
+        <form [formGroup]="quiz" class=" d-flex justify-content-center align-content-center mb-3">
+
+            <input type="text" 
+             formControlName="quizName" 
+             placeholder="Enter Quiz name "
+             class="form-control w-75"
+             >
+            
+             <select class='form-control w-25' formControlName="quizType" class="w-25 form-control">                                                                
+                
+                <option value='Select Type' disabled>Select Type</option>
+                <option value='frontEnd' >Front-end</option>
+                <option value='backEnd'>Back-end</option>
+                <option value='fullStack'>Full Stack</option>
+                <option value='english'>English</option>
+                <option value='IQ'>IQ</option>
+            </select>
+            
+        </form>
+        <button class="btn btn-info mr-3" (click)="onAddQuiz()" [disabled]="Entered">Confirm</button>
+    </div>
+  
+
+</div>
+
+
+
+

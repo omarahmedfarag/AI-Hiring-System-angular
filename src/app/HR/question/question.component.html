@@ -1,0 +1,38 @@
+<h3 class="text-center ">You Can Add Qestions Now!</h3>
+<div class="w-50 m-auto">
+    <form [formGroup]="quizForm" class="mb-3">
+        <input type="text"
+         placeholder="Enter Question"
+          class="form-control"
+          value="test"
+          formControlName="question"
+          >
+        <button class="btn btn-dark mt-3" (click)="onAddQuestion()">Submit</button>
+    </form>
+
+</div>
+
+
+<div class="w-75 m-auto ">
+    <div class="row border" *ngFor="let question of questions;let i=index">
+        
+        <div class="bg-light col-md-12">
+            <div class="row">
+                <div class="col-md-6 pt-2">{{question.question_body}}</div>
+                <div class="col-md-3"><button class="btn btn-dark" (click)="toggleFirst(question.question_id)" > Add Answers</button></div>
+                <div class="col-md-3"><button class="btn btn-danger" (click)="toggleSecond(question.question_id)" >View Answers</button></div>
+    
+            </div>
+         
+        </div>
+       
+            <div   class="bg-dark w-100 text-light py-3" id="{{'first'+question.question_id}}" style="display: none;" >
+                <app-answers status="first" *ngIf="answerStatus=='first'" quizId={{questionId}} questionId={{question.question_id}}></app-answers>
+            </div >
+
+            <div   class="bg-info w-100 text-light py-3" id="{{'second'+question.question_id}}" style="display: none;">
+                <app-answers status="second" *ngIf="answerStatus=='second'" quizId={{questionId}} questionId={{question.question_id}}></app-answers>
+            </div >
+            
+     </div>
+</div>

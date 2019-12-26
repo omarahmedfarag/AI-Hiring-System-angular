@@ -1,0 +1,48 @@
+<div *ngIf="status=='first'">   
+<h5 class="pl-3 mb-2">Enter The answer for the Question</h5>
+<form [formGroup]="answerGroup">
+    <div class="w-100 d-flex px-3">
+        <div class="w-75">
+
+                <input
+                type="text"
+                placeholder=" Enter an Answer "
+                formControlName="answer"
+                class="form-control">
+        
+
+        </div>
+
+
+        <div class="w-25 pl-2 mt-2">
+
+                    <input 
+                        type="checkbox"
+                        formControlName="checked"
+                        id="trueOrNot"
+                        (change)="onChange()">
+
+                    <span class="pl-1">
+                        <span [ngStyle]="{color:g}">Correct</span>/<span [ngStyle]="{color: r}">Wrong</span>
+                    </span> 
+
+        </div>
+
+   
+
+
+    </div>
+   <button class="btn btn-outline-info ml-3 mt-2" (click)="onAddAnswer()">Add</button>
+
+</form>
+
+</div>
+
+<div *ngIf="status =='second'">
+    <ul class="list-group w-75 m-auto text-dark">
+        
+        <li class="list-group-item pt-4" *ngFor="let a of answers">{{a.answer_body}} 
+             <span class="fa-pull-right bg-dark text-light px-3 rounded border-white">{{a.answer_condition}}</span> </li>
+        
+      </ul>
+</div>

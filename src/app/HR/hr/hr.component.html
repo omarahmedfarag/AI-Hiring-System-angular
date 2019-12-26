@@ -1,0 +1,61 @@
+
+<div class="HR" >
+
+    <div class="sidebar-container">
+      <div class="sidebar-logo">
+        Project Name
+      </div>
+      <ul class="sidebar-navigation">
+        <li class="header">Navigation</li>
+        <li>
+          <a [routerLink]="['/admin']" routerLinkActive="action" >
+            <i class="fa fa-home" aria-hidden="true"></i> Homepage
+          </a>
+        </li>
+        
+        <li>
+          <a [routerLink]="['quiz']" routerLinkActive="active">
+            <i class="fa fa-tachometer" aria-hidden="true"></i> Add Quiz
+          </a>
+        </li>
+  
+        <li>
+          <a [routerLink]="['ShowQuizzes']" routerLinkActive="active" >
+            <i class="fa fa-tachometer" aria-hidden="true"></i> Quiz Managment
+          </a>
+        </li>
+        <li class="header">Candidates</li>
+        <li>
+          <a [routerLink]="['requests']"  >
+            <i class="fa fa-users" aria-hidden="true"></i> Requests
+          </a>
+        </li>
+        <li>
+          <a [routerLink]="['requests']">
+            <i class="fa fa-cog" aria-hidden="true"></i> Scores
+          </a>
+        </li>
+        <li>
+          <a [routerLink]="['']" >
+            <i class="fa fa-info-circle" aria-hidden="true" ></i> Log out 
+          </a>
+        </li>
+      </ul>
+    </div>
+    
+    <div class="content-container">
+    
+      <div class="container-fluid">
+    
+        <!-- Main component for a primary marketing message or call to action -->
+        <div class="jumbotron">
+          <h1 *ngIf="request">Bla bla</h1>
+          <router-outlet></router-outlet>
+        </div>
+    
+      </div>
+    </div> 
+  
+     
+  
+  </div>

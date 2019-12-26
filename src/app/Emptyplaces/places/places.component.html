@@ -1,0 +1,43 @@
+<section>
+    <div class="container-fluid pt-5 pl-5">
+        <h3>Explore New Career Opportunities</h3>
+        <div class="row">
+            
+            <div class="col-md-8">
+                <div class="row">
+                    <div class="col-md-12">
+                      
+                      <div class="list-group my-3" *ngFor="let place of emptyPlaces">
+                          <div  class="list-group-item list-group-item-action ">
+                           <span class="text-primary font-weight-bold ">{{place.name}}<span class="badge badge-warning ml-3"> Part-time</span> </span>
+                           <hr>
+                           description voij but if you want to see wheather it work or not you need to test it agine abd ahibe 
+                           <div class="btns mt-4">
+                            <button class="btn btn-info mr-3" [disabled]="!isLoggedIn" [routerLink]="['../uploadcv']" routerLinkActive="router-link-active" >Apply</button>
+                            <button class="btn btn-outline-secondary">View</button>
+                          </div>
+                        </div>
+                          
+                       </div>
+                    </div>
+                   
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="list-group my-3" >
+                    <div  class="list-group-item list-group-item-action ">
+                     <span class="text-success font-weight-bold">Software Developer</span>
+                     <hr>
+                    <small>Technology rules our lives, and the information sector job outlook is growing as well. Software developers are responsible for the design and user experience of various computer programs and systems. The demand for software developers is expected to grow 24% by 2024, per the U.S. Bureau of Labor Statistics.</small>
+                        <hr>
+                        Upload Your Cv now to Join our community
+                        <hr>
+                        <button class="btn btn-outline-warning" [disabled]="!isLoggedIn" [routerLink]="['../uploadcv']" >Upload Cv </button>
+
+                    </div>
+                 </div>
+            </div>
+        </div>
+      
+    </div>
+</section>
